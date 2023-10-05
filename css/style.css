@@ -452,14 +452,14 @@ address :focus {
 .section-list-app {
   display: flex;
   flex-wrap: wrap;
-  column-gap: 24px;
+  gap: 24px;
+  align-items: center;
+  justify-content: center;
   row-gap: 48px;
-  padding: 0;
-  margin: 0;
 }
 
 .list-item-app {
-  width: calc((100% - 48px) / 3);
+  /* width: calc((100% - 48px) / 3); */
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -896,6 +896,10 @@ address :focus {
     line-height: 1.5;
     letter-spacing: 0.32px;
   }
+
+  .list-item-app {
+    width: calc((100% - 24px) / 2);
+  }
 }
 
 @media screen and (min-width: 1158px) {
@@ -958,5 +962,9 @@ address :focus {
 
   .team-list {
     flex-wrap: nowrap;
+  }
+
+  .list-item-app {
+    width: calc((100% - 48px) / 3);
   }
 }
