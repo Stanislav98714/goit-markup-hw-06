@@ -233,7 +233,7 @@ img {
     display: block;
     font-style: normal;
     gap: 40px;
-    padding: 16px;
+    padding: 16px 0;
   }
 }
 
@@ -276,6 +276,12 @@ address :focus {
   cursor: pointer;
   top: 16px;
   right: 16px;
+}
+
+@media screen and (min-width:768px) {
+  .header-menu-btn {
+    display: none;
+  }
 }
 
 .menu-toggle-icon {
@@ -1095,9 +1101,6 @@ address :focus {
   gap: 40px;
 }
 
-.mobile-menu-item:not(:last-child) {
-  margin-bottom: 40px;
-}
 
 .mobile-menu-link {
   color: #2E2F42;
@@ -1138,7 +1141,6 @@ address :focus {
 }
 
 .mobile-social-icons {
-  justify-content: center;
   gap: 40px;
   padding: 0;
 }
