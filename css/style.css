@@ -37,6 +37,11 @@ img {
   pointer-events: auto;
 }
 
+.is-hidden {
+  display: none;
+  visibility: hidden;
+}
+
 .logo-header {
   font-family: "Raleway";
   font-weight: 700;
@@ -70,6 +75,18 @@ img {
   border-bottom: 1px solid #e7e9fc;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+@media screen and (min-width:768px) {
+  .header {
+    padding: 0;
+  }
+}
+
+@media screen and (min-width:1158px) {
+  .header {
+    padding: 24px 0;
+  }
 }
 
 .header-inner {
@@ -251,7 +268,6 @@ address :focus {
 
 .header-menu-btn {
   display: flex;
-  position: absolute;
   align-items: center;
   justify-content: center;
   background-color: #fff;
@@ -280,7 +296,7 @@ address :focus {
 /* First Section */
 .first-section {
   background: var(--GREY, rgba(46, 47, 66, 0.70));
-  padding: 188px 0;
+  padding: 72px 0;
   margin: 0 auto;
   text-align: center;
   background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -303,6 +319,7 @@ address :focus {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url(../images/Dark-bg_tab.jpg);
     max-width: 768px;
+    padding: 112px 0;
   }
 }
 
@@ -318,6 +335,7 @@ address :focus {
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url(../images/Dark-bg_desc.jpg);
     max-width: 1158px;
+    padding: 188px 0;
   }
 }
 
@@ -331,12 +349,26 @@ address :focus {
 .section-title {
   max-width: 496px;
   margin: 0 auto;
-  font-size: 56px;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.07;
   text-align: center;
   letter-spacing: 0.02em;
   color: #ffffff;
+}
+
+@media screen and (min-width:768px) {
+  .section-title {
+    color: var(--WHITE, #FFF);
+    text-align: center;
+
+    font-family: Roboto;
+    font-size: 56px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 60px;
+    letter-spacing: 1.12px;
+  }
 }
 
 .section-button {
@@ -469,7 +501,7 @@ address :focus {
 .team-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 72px;
+  gap: 72px 24px;
   align-items: center;
   justify-content: center;
 }
@@ -827,13 +859,13 @@ address :focus {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  width: 408px;
-  min-height: 584px;
+  width: 288px;
+  min-height: 288px;
   background: #fcfcfc;
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  padding: 72px 24px 24px;
+  padding: 72px 16px 24px 16px;
 }
 
 .modal-button {
@@ -1002,13 +1034,21 @@ address :focus {
   border: none;
   border-radius: 4px;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  margin-left: 95px;
+  margin-left: 45px;
 }
 
-.is-hidden {
-  display: none;
-}
 
+@media screen and (min-width:768px) {
+  .modal {
+    width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px 24px;
+  }
+
+  .button-final {
+    margin-left: 95px;
+  }
+}
 
 /* Mobile Menu */
 
@@ -1022,7 +1062,7 @@ address :focus {
   background-color: #FFF;
   height: 100%;
   width: 100%;
-  transform: translateX(100%)
+
 }
 
 .mobile-menu-btn {
@@ -1049,6 +1089,10 @@ address :focus {
 
 .mobile-menu-list {
   margin-bottom: auto;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .mobile-menu-item:not(:last-child) {
@@ -1069,15 +1113,19 @@ address :focus {
   color: #404BBF;
 }
 
-.mobile-contact {
-  margin-bottom: 48px;
+.mobile-contacts {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
 }
 
-.mobile-contact:not(:last-child) {
+
+.mobile-contacts:not(:last-child) {
   margin-bottom: 24px;
 }
 
-.mobile.contact-link {
+.mobile-contacts-link {
   color: #434455;
   font-size: 20px;
   font-weight: 500;
@@ -1085,10 +1133,20 @@ address :focus {
   letter-spacing: 0.02em;
 }
 
-.mobile.contact-link.accent {
+.mobile-contacts-link.accent {
   color: #404BBF;
 }
 
+.mobile-social-icons {
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+}
+
+.menu-container.is-open {
+  transform: translateX(0);
+  transition: all, 250ms;
+}
 
 /* End Mobile Menu */
 
@@ -1190,8 +1248,8 @@ address :focus {
   .list-heading {
     text-align: left;
     color: #2e2f42;
-    font-size: 36px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 500;
     line-height: 1.11;
     letter-spacing: 0.72px;
     margin-bottom: 8px;
@@ -1202,7 +1260,7 @@ address :focus {
     text-align: left;
     color: #434455;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 1.5;
     letter-spacing: 0.32px;
   }
@@ -1231,6 +1289,10 @@ address :focus {
     justify-content: flex-start;
     padding-left: 16px;
     padding-right: 16px;
+  }
+
+  .logo-footer {
+    text-align: left;
   }
 
   .footer-inner-logo {
